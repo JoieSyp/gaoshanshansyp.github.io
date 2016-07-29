@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于前端的几道经典面试题 | 无所畏惧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端面试的时候一般会考察你对JavaScript中函数作用域的理解，而且还会考察你对this的理解
+年前刚刚离职了，分享下我曾经出过的一道面试题，此题是我出的一套前端面试题中的最后一题，用来考核面试者的JavaScript的综合能力，很可惜到目前为止的将近两年中，几乎没有人能够完全答对，并非多难只是因为大多面试者过于轻视他。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于前端的几道经典面试题">
+<meta property="og:url" content="http://yoursite.com/2016/05/23/关于前端的几道经典面试题/index.html">
+<meta property="og:site_name" content="无所畏惧">
+<meta property="og:description" content="前端面试的时候一般会考察你对JavaScript中函数作用域的理解，而且还会考察你对this的理解
+年前刚刚离职了，分享下我曾经出过的一道面试题，此题是我出的一套前端面试题中的最后一题，用来考核面试者的JavaScript的综合能力，很可惜到目前为止的将近两年中，几乎没有人能够完全答对，并非多难只是因为大多面试者过于轻视他。">
+<meta property="og:image" content="http://i4.buimg.com/2e1fed9cf8691bf9.png">
+<meta property="og:updated_time" content="2016-05-23T12:58:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于前端的几道经典面试题">
+<meta name="twitter:description" content="前端面试的时候一般会考察你对JavaScript中函数作用域的理解，而且还会考察你对this的理解
+年前刚刚离职了，分享下我曾经出过的一道面试题，此题是我出的一套前端面试题中的最后一题，用来考核面试者的JavaScript的综合能力，很可惜到目前为止的将近两年中，几乎没有人能够完全答对，并非多难只是因为大多面试者过于轻视他。">
+<meta name="twitter:image" content="http://i4.buimg.com/2e1fed9cf8691bf9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="无所畏惧" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">无所畏惧</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">做一个处事不惊的女子</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/works">作品</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-关于前端的几道经典面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/23/关于前端的几道经典面试题/" class="article-date">
+  <time datetime="2016-05-23T11:31:58.000Z" itemprop="datePublished">2016-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于前端的几道经典面试题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><br></p>
+<p>前端面试的时候一般会考察你对JavaScript中函数作用域的理解，而且还会考察你对this的理解</p>
+<p>年前刚刚离职了，分享下我曾经出过的一道面试题，此题是我出的一套前端面试题中的最后一题，用来考核面试者的JavaScript的综合能力，很可惜到目前为止的将近两年中，几乎没有人能够完全答对，并非多难只是因为大多面试者过于轻视他。<br><a id="more"></a><br>此题是我综合之前的开发经验以及遇到的JS各种坑汇集而成。此题涉及的知识点众多，包括变量定义提升、this指针指向、运算符优先级、原型、继承、全局变量污染、对象属性及原型属性优先级等等。</p>
+<h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><pre><code>function Foo(){
+    getName = function(){
+        alert(1);
+    }
+    return this;
+}
+function getName(){
+    alert(5);
+}
+var getName;
+Foo.getName = function(){
+    alert(2);
+}
+Foo.prototype.getName = function(){
+    alert(3);
+}
+getName= function(){
+    alert(4);
+}
+
+Foo.getName();//2
+getName();//4
+Foo().getName();//1
+getName();//1
+new Foo.getName();// 2
+new Foo().getName();// 1 || 3
+new new Foo().getName();//1 || 3
+</code></pre><h3 id="变量声明提升"><a href="#变量声明提升" class="headerlink" title="变量声明提升"></a>变量声明提升</h3><p>例如下边代码：</p>
+<pre><code>console.log(&apos;x&apos; in window);//true
+var x;
+x = 0; 
+</code></pre><p>代码执行时js引擎沪江声明语句提升到代码最上方，变为：</p>
+<pre><code>var x;
+console.log(&apos;x&apos; in window);//true
+x = 0;
+</code></pre><h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>var getName 与 function getName 都是声明语句，区别在于 var getName 是函数表达式，而 function getName 是函数声明。关于JS中的各种函数创建方式可以看 <a href="http://www.codeceo.com/article/javascript-closure-interview.html" target="_blank" rel="external">大部分人都会做错的经典JS闭包面试题</a>这篇文章有详细说明。</p>
+<p>函数表达式的最大问题就是在于js会将此代码拆分成两行代码分别执行。<br>例如：</p>
+<pre><code>console.log(x);//输出：function x(){}
+var x=1;
+function x(){}
+</code></pre><p>实际执行的代码为，先将 var x=1 拆分为 var x; 和 x = 1; 两行，再将 var x; 和 function x(){} 两行提升至最上方变成：</p>
+<pre><code>var x;
+x=1;
+function x(){}；
+console.log(x);
+</code></pre><p>同理，原题中代码最终执行时的是：</p>
+<pre><code>function Foo() {
+    getName = function () { alert (1); };
+    return this;
+}
+var getName;//只提升变量声明
+function getName() { alert (5);}//提升函数声明，覆盖var的声明
+
+Foo.getName = function () { alert (2);};
+Foo.prototype.getName = function () { alert (3);};
+getName = function () { alert (4);};//最终的赋值再次覆盖function     getName声明
+
+getName();//最终输出4
+</code></pre><h3 id="js运算符优先级"><a href="#js运算符优先级" class="headerlink" title="js运算符优先级:"></a>js运算符优先级:</h3><p><a href="http://www.kekaoyun.com/2e1fed9cf8691bf9" target="_blank" rel="external"><img src="http://i4.buimg.com/2e1fed9cf8691bf9.png"></a></p>
+<h3 id="构造函数的返回值"><a href="#构造函数的返回值" class="headerlink" title="构造函数的返回值"></a>构造函数的返回值</h3><p>传统语言中，构造函数不应该有返回值，实际执行的返回值就是此构造函数的实例化对象。</p>
+<p>而在js中构造函数可以有返回值也可以没有。</p>
+<h4 id="1、没有返回值则按照其他语言一样返回实例化对象"><a href="#1、没有返回值则按照其他语言一样返回实例化对象" class="headerlink" title="1、没有返回值则按照其他语言一样返回实例化对象"></a>1、没有返回值则按照其他语言一样返回实例化对象</h4><h4 id="2、若有返回值则检查其返回值是否为引用类型。"><a href="#2、若有返回值则检查其返回值是否为引用类型。" class="headerlink" title="2、若有返回值则检查其返回值是否为引用类型。"></a>2、若有返回值则检查其返回值是否为引用类型。</h4><p>如果是非引用类型，如基本类型（string,number,boolean,null,undefined）则与无返回值相同，实际返回其实例化对象。</p>
+<h4 id="3、如果返回值是引用类型，则实际返回值-为这个引用类型"><a href="#3、如果返回值是引用类型，则实际返回值-为这个引用类型" class="headerlink" title="3、如果返回值是引用类型，则实际返回值 为这个引用类型"></a>3、如果返回值是引用类型，则实际返回值 为这个引用类型</h4><p>原题中，返回的是this，而this在构造函数中本来就代表当前实例化对象，遂最终Foo函数返回实例化对象。</p>
+<p>之后调用实例化对象的getName函数，因为在Foo构造函数中没有为实例化对象添加任何属性，遂到当前对象的原型对象（prototype）中寻找getName，找到了。</p>
+<p>遂最终输出3。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/23/关于前端的几道经典面试题/" data-id="cir7lejby000mr8o8kv5t49df" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端面试题/">前端面试题</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/23/Tween-js详解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Tween.js详解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/23/js面向对象编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js面向对象编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-github-仓库/">git,github,仓库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQery/">jQery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lamp-m-p/">lamp(m,p)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题/">前端面试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/响应式/">响应式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片居中-CSS/">图片居中,CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件设计原则/">软件设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git-github-仓库/" style="font-size: 10px;">git,github,仓库</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/jQery/" style="font-size: 10px;">jQery</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/lamp-m-p/" style="font-size: 20px;">lamp(m,p)</a> <a href="/tags/前端面试题/" style="font-size: 20px;">前端面试题</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/图片居中-CSS/" style="font-size: 10px;">图片居中,CSS</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/软件设计原则/" style="font-size: 10px;">软件设计原则</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/23/学习提高你CSS技术的法则/">学习提高你CSS技术的法则</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/22/软设计原则/">软设计原则</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/原生JavaScript实现ajax/">原生JavaScript实现ajax</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/21/php操作sql获得的返回值/">php操作sql获得的返回值</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/21/如何做到jQuery-free/">如何做到jQuery-free?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Shang Yinping<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/works" class="mobile-nav-link">作品</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

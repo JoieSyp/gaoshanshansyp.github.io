@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何做到jQuery-free? | 无所畏惧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何做到 jQuery-free？jQuery是现在最流行的JavaScript工具库。
+据统计，目前全世界57.3%的网站使用它。也就是说，10个网站里面，有6个使用jQuery。如果只考察使用工具库的网站，这个比例就会上升到惊人的91.7%。
+虽然jQuery如此受欢迎，但是它臃肿的体积也让人头痛不已。jQuery 2.0的原始大小为235KB，优化后为81KB；如果是支持IE6、7、8的jQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何做到jQuery-free?">
+<meta property="og:url" content="http://yoursite.com/2016/06/21/如何做到jQuery-free/index.html">
+<meta property="og:site_name" content="无所畏惧">
+<meta property="og:description" content="如何做到 jQuery-free？jQuery是现在最流行的JavaScript工具库。
+据统计，目前全世界57.3%的网站使用它。也就是说，10个网站里面，有6个使用jQuery。如果只考察使用工具库的网站，这个比例就会上升到惊人的91.7%。
+虽然jQuery如此受欢迎，但是它臃肿的体积也让人头痛不已。jQuery 2.0的原始大小为235KB，优化后为81KB；如果是支持IE6、7、8的jQ">
+<meta property="og:updated_time" content="2016-07-21T01:09:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何做到jQuery-free?">
+<meta name="twitter:description" content="如何做到 jQuery-free？jQuery是现在最流行的JavaScript工具库。
+据统计，目前全世界57.3%的网站使用它。也就是说，10个网站里面，有6个使用jQuery。如果只考察使用工具库的网站，这个比例就会上升到惊人的91.7%。
+虽然jQuery如此受欢迎，但是它臃肿的体积也让人头痛不已。jQuery 2.0的原始大小为235KB，优化后为81KB；如果是支持IE6、7、8的jQ">
+  
+    <link rel="alternate" href="/atom.xml" title="无所畏惧" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">无所畏惧</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">做一个处事不惊的女子</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/works">作品</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-如何做到jQuery-free" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/21/如何做到jQuery-free/" class="article-date">
+  <time datetime="2016-06-21T00:52:10.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何做到jQuery-free?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="如何做到-jQuery-free？"><a href="#如何做到-jQuery-free？" class="headerlink" title="如何做到 jQuery-free？"></a>如何做到 jQuery-free？</h1><p>jQuery是现在最流行的JavaScript工具库。</p>
+<p>据统计，目前全世界57.3%的网站使用它。也就是说，10个网站里面，有6个使用jQuery。如果只考察使用工具库的网站，这个比例就会上升到惊人的91.7%。</p>
+<p>虽然jQuery如此受欢迎，但是它臃肿的体积也让人头痛不已。jQuery 2.0的原始大小为235KB，优化后为81KB；如果是支持IE6、7、8的jQuery 1.8.3，原始大小为261KB，优化后为91KB。</p>
+<p>这样的体积，即使是宽带环境，完全加载也需要1秒或更长，更不要说移动设备了。这意味着，如果你使用了jQuery，用户至少延迟1秒，才能看到网页效果。考虑到本质上，jQuery只是一个操作DOM的工具，我们不仅要问：如果只是为了几个网页特效，是否有必要动用这么大的库？<br><a id="more"></a></p>
+<p>2006年，jQuery诞生的时候，主要用于消除不同浏览器的差异（主要是IE6），为开发者提供一个简洁的统一接口。相比当时，如今的情况已经发生了很大的变化。IE的市场份额不断下降，以ECMAScript为基础的JavaScript标准语法，正得到越来越广泛的支持。开发者直接使用JavScript标准语法，就能同时在各大浏览器运行，不再需要通过jQuery获取兼容性。</p>
+<p>下面就探讨如何用JavaScript标准语法，取代jQuery的一些主要功能，做到jQuery-free。</p>
+<h2 id="一、选取DOM元素"><a href="#一、选取DOM元素" class="headerlink" title="一、选取DOM元素"></a>一、选取DOM元素</h2><p>jQuery的核心是通过各种选择器，选中DOM元素，可以用querySelectorAll方法模拟这个功能。<br>　　var $ = document.querySelectorAll.bind(document);<br>这里需要注意的是，querySelectorAll方法返回的是NodeList对象，它很像数组（有数字索引和length属性），但不是数组，不能使用pop、push等数组特有方法。如果有需要，可以考虑将Nodelist对象转为数组。<br>　　myList = Array.prototype.slice.call(myNodeList);</p>
+<h2 id="二、DOM操作"><a href="#二、DOM操作" class="headerlink" title="二、DOM操作"></a>二、DOM操作</h2><p>DOM本身就具有很丰富的操作方法，可以取代jQuery提供的操作方法。<br>尾部追加DOM元素。</p>
+<pre><code>// jQuery写法
+$(parent).append($(child));
+// DOM写法
+parent.appendChild(child)
+</code></pre><p>头部插入DOM元素。</p>
+<pre><code>// jQuery写法
+$(parent).prepend($(child));
+parent.insertBefore(child, parent.childNodes[0])
+</code></pre><p>删除DOM元素。</p>
+<pre><code>// jQuery写法
+$(child).remove()
+// DOM写法
+child.parentNode.removeChild(child)
+</code></pre><h2 id="三、事件的监听"><a href="#三、事件的监听" class="headerlink" title="三、事件的监听"></a>三、事件的监听</h2><p>jQuery的on方法，完全可以用addEventListener模拟。</p>
+<pre><code>Element.prototype.on = Element.prototype.addEventListener;
+</code></pre><p>为了使用方便，可以在NodeList对象上也部署这个方法。</p>
+<pre><code>NodeList.prototype.on = function (event, fn) {
+　　[][&apos;forEach&apos;].call(this, function (el) {
+　　　　el.on(event, fn);
+　　});
+　return this;
+};
+</code></pre><p>四、事件的触发<br>jQuery的trigger方法则需要单独部署，相对复杂一些。</p>
+<pre><code>Element.prototype.trigger = function (type, data) {
+　　var event = document.createEvent(&apos;HTMLEvents&apos;);
+　event.initEvent(type, true, true);
+　　event.data = data || {};
+　　event.eventName = type;
+　　event.target = this;
+  　this.dispatchEvent(event);
+    　return this;
+};
+</code></pre><p>在NodeList对象上也部署这个方法。</p>
+<pre><code>NodeList.prototype.trigger = function (event) {
+　　[][&apos;forEach&apos;].call(this, function (el) {
+　　　el[&apos;trigger&apos;](event);
+　});
+　　return this;
+};
+</code></pre><h2 id="五、document-ready"><a href="#五、document-ready" class="headerlink" title="五、document.ready"></a>五、document.ready</h2><p>目前的最佳实践，是将JavaScript脚本文件都放在页面底部加载。这样的话，其实document.ready方法（jQuery简写为$(function)）已经不必要了，因为等到运行的时候，DOM对象已经生成了。</p>
+<h2 id="六、attr方法"><a href="#六、attr方法" class="headerlink" title="六、attr方法"></a>六、attr方法</h2><p>jQuery使用attr方法，读写网页元素的属性。</p>
+<pre><code>$(&quot;#picture&quot;).attr(&quot;src&quot;, &quot;http://url/to/image&quot;);
+</code></pre><p>DOM元素允许直接读取属性值，写法要简洁许多。</p>
+<pre><code>$(&quot;#picture&quot;).src = &quot;http://url/to/image&quot;;
+</code></pre><p>需要注意，input元素的this.value返回的是输入框中的值，链接元素的this.href返回的是绝对URL。如果需要用到这两个网页元素的属性准确值，可以用</p>
+<pre><code>this.getAttribute(&apos;value&apos;)和this.getAttibute(&apos;href&apos;)。
+</code></pre><h2 id="七、addClass方法"><a href="#七、addClass方法" class="headerlink" title="七、addClass方法"></a>七、addClass方法</h2><p>jQuery的addClass方法，用于为DOM元素添加一个class。</p>
+<pre><code>$(&apos;body&apos;).addClass(&apos;hasJS&apos;);
+</code></pre><p>DOM元素本身有一个可读写的className属性，可以用来操作class。</p>
+<pre><code>document.body.className = &apos;hasJS&apos;;
+// or
+document.body.className += &apos; hasJS&apos;;
+</code></pre><p>HTML 5还提供一个classList对象，功能更强大（IE 9不支持）。</p>
+<pre><code>document.body.classList.add(&apos;hasJS&apos;);
+document.body.classList.remove(&apos;hasJS&apos;);
+document.body.classList.toggle(&apos;hasJS&apos;);
+document.body.classList.contains(&apos;hasJS&apos;);
+</code></pre><h2 id="八、CSS"><a href="#八、CSS" class="headerlink" title="八、CSS"></a>八、CSS</h2><p>jQuery的css方法，用来设置网页元素的样式。</p>
+<pre><code>$(node).css( &quot;color&quot;, &quot;red&quot; );
+</code></pre><p>DOM元素有一个style属性，可以直接操作。</p>
+<pre><code>element.style.color = &quot;red&quot;;;
+// or
+element.style.cssText += &apos;color:red&apos;;
+</code></pre><h2 id="九、数据储存"><a href="#九、数据储存" class="headerlink" title="九、数据储存"></a>九、数据储存</h2><p>jQuery对象可以储存数据。</p>
+<pre><code>$(&quot;body&quot;).data(&quot;foo&quot;, 52);
+</code></pre><p>HTML 5有一个dataset对象，也有类似的功能（IE 10不支持），不过只能保存字符串。</p>
+<pre><code>element.dataset.user = JSON.stringify(user);
+element.dataset.score = score;
+</code></pre><h2 id="十、Ajax"><a href="#十、Ajax" class="headerlink" title="十、Ajax"></a>十、Ajax</h2><p>jQuery的Ajax方法，用于异步操作。</p>
+<pre><code>$.ajax({
+　　type: &quot;POST&quot;,
+　　url: &quot;some.php&quot;,
+　　data: { name: &quot;John&quot;, location: &quot;Boston&quot; }
+}).done(function( msg ) {
+　　alert( &quot;Data Saved: &quot; + msg );
+});
+</code></pre><p>我们可以定义一个request函数，模拟Ajax方法。</p>
+<pre><code>function request(type, url, opts, callback) {
+　　var xhr = new XMLHttpRequest();
+　　if (typeof opts === &apos;function&apos;) {
+　　　　callback = opts;
+　　　　opts = null;
+　　}
+　　xhr.open(type, url);
+　　var fd = new FormData();
+　　if (type === &apos;POST&apos; &amp;&amp; opts) {
+　　　　for (var key in opts) {
+　　　　　　fd.append(key, JSON.stringify(opts[key]));
+　　　　}
+　　}
+　　xhr.onload = function () {
+　　　　callback(JSON.parse(xhr.response));
+　　};
+　　xhr.send(opts ? fd : null);
+}
+</code></pre><p>然后，基于request函数，模拟jQuery的get和post方法。</p>
+<pre><code>var get = request.bind(this, &apos;GET&apos;);
+var post = request.bind(this, &apos;POST&apos;);
+</code></pre><p>　　## 十一、动画<br>jQuery的animate方法，用于生成动画效果。</p>
+<pre><code>$foo.animate(&apos;slow&apos;, { x: &apos;+=10px&apos; })；
+</code></pre><p>jQuery的动画效果，很大部分基于DOM。但是目前，CSS 3的动画远比DOM强大，所以可以把动画效果写进CSS，然后通过操作DOM元素的class，来展示动画。</p>
+<pre><code>foo.classList.add(&apos;animate&apos;)；
+</code></pre><p>如果需要对动画使用回调函数，CSS 3也定义了相应的事件。</p>
+<pre><code>el.addEventListener(&quot;webkitTransitionEnd&quot;, transitionEnded);
+el.addEventListener(&quot;transitionend&quot;, transitionEnded);
+</code></pre><h2 id="十二、替代方案"><a href="#十二、替代方案" class="headerlink" title="十二、替代方案"></a>十二、替代方案</h2><p>由于jQuery体积过大，替代方案层出不穷。</p>
+<p>其中，最有名的是zepto.js。它的设计目标是以最小的体积，做到最大兼容jQuery的API。zepto.js 1.0版的原始大小是55KB，优化后是29KB，gzip压缩后为10KB。<br>如果不求最大兼容，只希望模拟jQuery的基本功能，那么，min.js优化后只有200字节，而dolla优化后是1.7KB。</p>
+<p>此外，jQuery本身采用模块设计，可以只选择使用自己需要的模块。具体做法参见它的github网站，或者使用专用的Web界面。</p>
+<h2 id="十三、参考链接"><a href="#十三、参考链接" class="headerlink" title="十三、参考链接"></a>十三、参考链接</h2><p>　　- Remy Sharp，I know jQuery. Now what?<br>　　- Hemanth.HM，Power of Vanilla JS<br>　　- Burke Holland，5 Things You Should Stop Doing With jQuery<br>（完）</p>
+<h3 id="文章转载自-lt-阮一峰博客-gt"><a href="#文章转载自-lt-阮一峰博客-gt" class="headerlink" title="文章转载自&lt;阮一峰博客&gt;"></a>文章转载自<a href="http://www.ruanyifeng.com/blog/2013/05/jquery-free.html" target="_blank" rel="external">&lt;阮一峰博客&gt;</a></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/21/如何做到jQuery-free/" data-id="cir7lejc8000vr8o84n23y0f5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQery/">jQery</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/21/php操作sql获得的返回值/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          php操作sql获得的返回值
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/18/php操作sql/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php操作sql</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-github-仓库/">git,github,仓库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQery/">jQery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jade/">jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lamp-m-p/">lamp(m,p)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题/">前端面试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/响应式/">响应式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片居中-CSS/">图片居中,CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件设计原则/">软件设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git-github-仓库/" style="font-size: 10px;">git,github,仓库</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/jQery/" style="font-size: 10px;">jQery</a> <a href="/tags/jade/" style="font-size: 10px;">jade</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/lamp-m-p/" style="font-size: 20px;">lamp(m,p)</a> <a href="/tags/前端面试题/" style="font-size: 20px;">前端面试题</a> <a href="/tags/响应式/" style="font-size: 10px;">响应式</a> <a href="/tags/图片居中-CSS/" style="font-size: 10px;">图片居中,CSS</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/软件设计原则/" style="font-size: 10px;">软件设计原则</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/23/学习提高你CSS技术的法则/">学习提高你CSS技术的法则</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/22/软设计原则/">软设计原则</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/原生JavaScript实现ajax/">原生JavaScript实现ajax</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/21/php操作sql获得的返回值/">php操作sql获得的返回值</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/21/如何做到jQuery-free/">如何做到jQuery-free?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Shang Yinping<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/works" class="mobile-nav-link">作品</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

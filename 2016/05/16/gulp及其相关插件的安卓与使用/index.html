@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Bootstrap技术 | 无所畏惧</title>
+  <title>gulp及其相关插件的安卓与使用 | 无所畏惧</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bootstrap基础知识123456789101112第一、Bootstrap的背景历史   来自 Twitter，是目前最受欢迎的前端框架。   Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。第二、首先准备环境：    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;    &amp;lt;meta http">
+  <meta name="description" content="gulp.js-基于流的自动化构建工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bootstrap技术">
-<meta property="og:url" content="http://yoursite.com/2016/05/18/newfile/index.html">
+<meta property="og:title" content="gulp及其相关插件的安卓与使用">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/gulp及其相关插件的安卓与使用/index.html">
 <meta property="og:site_name" content="无所畏惧">
-<meta property="og:description" content="Bootstrap基础知识123456789101112第一、Bootstrap的背景历史   来自 Twitter，是目前最受欢迎的前端框架。   Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。第二、首先准备环境：    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;    &amp;lt;meta http">
-<meta property="og:updated_time" content="2016-06-12T13:41:54.000Z">
+<meta property="og:description" content="gulp.js-基于流的自动化构建工具">
+<meta property="og:updated_time" content="2016-05-16T11:49:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bootstrap技术">
-<meta name="twitter:description" content="Bootstrap基础知识123456789101112第一、Bootstrap的背景历史   来自 Twitter，是目前最受欢迎的前端框架。   Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。第二、首先准备环境：    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;    &amp;lt;meta http">
+<meta name="twitter:title" content="gulp及其相关插件的安卓与使用">
+<meta name="twitter:description" content="gulp.js-基于流的自动化构建工具">
   
     <link rel="alternate" href="/atom.xml" title="无所畏惧" type="application/atom+xml">
   
@@ -71,10 +71,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-newfile" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-gulp及其相关插件的安卓与使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/18/newfile/" class="article-date">
-  <time datetime="2016-05-18T09:55:18.000Z" itemprop="datePublished">2016-05-18</time>
+    <a href="/2016/05/16/gulp及其相关插件的安卓与使用/" class="article-date">
+  <time datetime="2016-05-16T11:30:14.000Z" itemprop="datePublished">2016-05-16</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Bootstrap技术
+      gulp及其相关插件的安卓与使用
     </h1>
   
 
@@ -93,47 +93,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Bootstrap基础知识"><a href="#Bootstrap基础知识" class="headerlink" title="Bootstrap基础知识"></a>Bootstrap基础知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">第一、Bootstrap的背景历史</span><br><span class="line">   来自 Twitter，是目前最受欢迎的前端框架。</span><br><span class="line">   Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。</span><br><span class="line">第二、首先准备环境：</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap-登录界面&lt;/title&gt;</span><br><span class="line">    &lt;link href=&quot;http://cdn.bootcss.com/bootstrap/3.3.5/  css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/  bootstrap/3.3.5/css/bootstrap-theme.min.css&quot;/&gt;</span><br><span class="line"> &lt;script src=&quot;http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;http://cdn.bootcss.com/bootstrap/3.3.5/   js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>第二、Bootstrap的特点</p>
-<ul>
-<li>Bootstrap3.0的优势是开发响应式布局</li>
-<li>一套易用、优雅、灵活、可扩展的前端工具集</li>
-<li>它是基于html、css和jquery而开发的</li>
-<li>开源的，免费的 </li>
-<li>丰富的组件和javascript插件</li>
-<li>一套自己的图标(Glyphicons 字体图标)</li>
-</ul>
-<hr>
-<a id="more"></a>
-<p>bootstrap文件 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">├── css/</span><br><span class="line">│   ├── bootstrap.css</span><br><span class="line">│   ├── bootstrap.css.map</span><br><span class="line">│   ├── bootstrap.min.css</span><br><span class="line">│   ├── bootstrap-theme.css</span><br><span class="line">│   ├── bootstrap-theme.css.map</span><br><span class="line">│   └── bootstrap-theme.min.css</span><br><span class="line">├── js/</span><br><span class="line">│   ├── bootstrap.js</span><br><span class="line">│   └── bootstrap.min.js</span><br><span class="line">└── fonts/</span><br><span class="line">    ├── glyphicons-halflings-regular.eot</span><br><span class="line">    ├── glyphicons-halflings-regular.svg</span><br><span class="line">    ├── glyphicons-halflings-regular.ttf</span><br><span class="line">    ├── glyphicons-halflings-regular.woff</span><br><span class="line">    └── glyphicons-halflings-regular.woff2</span><br></pre></td></tr></table></figure>
+        <h2 id="gulp-js-基于流的自动化构建工具"><a href="#gulp-js-基于流的自动化构建工具" class="headerlink" title="gulp.js-基于流的自动化构建工具"></a><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">gulp.js</a>-基于流的自动化构建工具</h2><a id="more"></a>
+<h2 id="gulp的插件库gulp-jspluginregistry"><a href="#gulp的插件库gulp-jspluginregistry" class="headerlink" title="gulp的插件库gulp.jspluginregistry"></a>gulp的<a href="http://gulpjs.com/plugins/" target="_blank" rel="external">插件库</a>gulp.jspluginregistry</h2><h3 id="gulp插件的安装"><a href="#gulp插件的安装" class="headerlink" title="gulp插件的安装"></a>gulp插件的安装</h3><p>代码如下： </p>
+<pre><code>$ sudo npm install gulp -g 
+</code></pre><p>进入项目的的文件夹后初始化开发依赖的的josn文件：</p>
+<pre><code>$ npm int
+</code></pre><p>然后设置相关配置后进行一些常用插件的安装，如jsmin，cssmin，jsconcat：</p>
+<pre><code>$ npm install gulp-jsmin --save-dev
+</code></pre><p>其他插件的安装和上边一样；</p>
+<h3 id="配置gulp任务和参数"><a href="#配置gulp任务和参数" class="headerlink" title="配置gulp任务和参数"></a>配置gulp任务和参数</h3><p>在目标文件夹中，创建一个叫gulpfile.js的文件</p>
+<p>打开文件编辑，通过gulp.task()来建立任务进程，</p>
+<p>其中三个参数分别是<code>任务名</code>,<code>任务依赖</code>，<code>回调</code>;</p>
+<pre><code>var gulp =require(&apos;gulp&apos;);
+var jsmin = require(&apos;gulp-jsmin&apos;);
+var cssmin    = require(&apos;gulp-cssmin&apos;);
+var concat = require(&apos;gulp-concat&apos;);
 
+gulp.task(&apos;default&apos;,function () {
+console.log(&apos;hahahha&apos;);
+})
+gulp.task(&apos;jsmin&apos;,function(){
+gulp.src(&apos;js/index.js&apos;)
+.pipe(jsmin())
+.pipe(gulp.dest(&apos;desk/index.js&apos;))
+})
+</code></pre><p>gulp.src() </p>
+<pre><code>    目标文件
+gulp.dest
+    目标输出
+pipe()
+    管道，上面的输出就是下面的输入
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/18/newfile/" data-id="cipcmpt0b0002ubo53asvticc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/gulp及其相关插件的安卓与使用/" data-id="cir7lejbn0009r8o8gg4qqew0" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/05/18/gitset/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/16/gulp解析，压缩，合并文件/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Git知识
+          gulp解析，压缩，合并文件
         
       </div>
     </a>
   
   
-    <a href="/2016/05/18/bootstrap的使用/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/13/SEO优化-标签/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">bootstrap的使用</div>
+      <div class="article-nav-title">SEO优化-标签</div>
     </a>
   
 </nav>
